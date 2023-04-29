@@ -1,0 +1,56 @@
+* {
+    border: 2px solid red;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calcu-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 500px;
+    height: 600px;
+    border: 5px solid teal;
+}
+
+.calcu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 450px;
+    height: 30px;
+    border: 5px solid blue;
+}
+
+.casio-text {
+
+}
+
+.solar-img {
+    background-color: black;
+    width: 100px;
+    height: 20px;
+}
+
+.screen-space {
+    border: 5px solid black;
+    width: 450px;
+    height: 100px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-around;
+    border: 5px solid lightseagreen;
+    width: 450px;
+    height: 60px;
+}
+
+.calcu-buttons {
+    border: 5px solid black;
+    width: 75px;
+}

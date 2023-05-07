@@ -71,3 +71,11 @@
     margin: 5px;
     border-radius: 15%;
 }
+
+.calcu-buttons:hover {
+    background-color: grey;
+}
+
+.calcu-buttons:active {
+    background-color: white;
+}

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>PROJECT: Calculator</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </head>
 
 <body>
@@ -19,43 +19,46 @@
                 <div class="solar-img"></div>
             </div>
 
-            <div class="screen-space"></div>
+            <div class="screen-space">
+                <div class="previous-operand">123+</div>
+                <div class="current-operand">456</div>
+            </div>
 
             <div class="calcu-button-container">
                 <div class="button-container">
-                    <button class="calcu-buttons" id="7-button">7</button>
-                    <button class="calcu-buttons" id="8-button">8</button>
-                    <button class="calcu-buttons" id="9-button">9</button>
-                    <button class="calcu-buttons" id="C-button">C</button>
-                    <button class="calcu-buttons" id="AC-button">AC</button>
+                    <button class="calcu-buttons" class="number-button">7</button>
+                    <button class="calcu-buttons" class="number-button">8</button>
+                    <button class="calcu-buttons" class="number-button">9</button>
+                    <button class="calcu-buttons" class="delete-button">C</button>
+                    <button class="calcu-buttons" class="all-clear-button">AC</button>
                 </div>
 
                 <div class="button-container">
-                    <button class="calcu-buttons" id="4-button">4</button>
-                    <button class="calcu-buttons" id="5-button">5</button>
-                    <button class="calcu-buttons" id="6-button">6</button>
-                    <button class="calcu-buttons" id="/-button">/</button>
-                    <button class="calcu-buttons" id="*-button">*</button>
+                    <button class="calcu-buttons" class="number-button">4</button>
+                    <button class="calcu-buttons" class="number-button">5</button>
+                    <button class="calcu-buttons" class="number-button">6</button>
+                    <button class="calcu-buttons" class="operation-button">/</button>
+                    <button class="calcu-buttons" class="operation-button">*</button>
                 </div>
 
 <div class="lower-container">
 
     <div>
                 <div class="button-container last-containers">
-                    <button class="calcu-buttons" id="1-button">1</button>
-                    <button class="calcu-buttons" id="2-button">2</button>
-                    <button class="calcu-buttons" id="3-button">3</button>
-                    <button class="calcu-buttons" id="--button">-</button>
+                    <button class="calcu-buttons" class="number-button">1</button>
+                    <button class="calcu-buttons" class="number-button">2</button>
+                    <button class="calcu-buttons" class="number-button">3</button>
+                    <button class="calcu-buttons" class="operation-button">-</button>
                 </div>
 
                 <div class="button-container last-containers">
-                    <button class="calcu-buttons" id="0-button">0</button>
-                    <button class="calcu-buttons" id="00-button">00</button>
-                    <button class="calcu-buttons" id=".-button">.</button>
-                    <button class="calcu-buttons" id="=-button">=</button>
+                    <button class="calcu-buttons" class="number-button">0</button>
+                    <button class="calcu-buttons" class="number-button">00</button>
+                    <button class="calcu-buttons" class="number-button">.</button>
+                    <button class="calcu-buttons" class="equals-button">=</button>
                 </div>
     </div>
-                    <button class="calcu-buttons">+</button>
+                    <button class="calcu-buttons" class="operation-button">+</button>
 </div>
         
 </div>

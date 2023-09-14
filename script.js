@@ -1,19 +1,13 @@
-function add(num1, num2) {
-    let sum = num1 + num2;
-    return sum;
-}
+//Basic math functions
+//Create function to store current and previous operands
+//Create a operate function
+//Create functions for display
+//Create function that converts button press to string
 
-function subtract(num1, num2) {
-    let diff = num1 - num2;
-    return diff;
-}
-
-function multiply(num1, num2) {
-    let product = num1 * num2;
-    return product;
-}
-
-function divide(num1, num2) {
-    let quotient = num1 / num2;
-    return quotient;
-}
+const numberButtons = document.querySelectorAll('.number-buttons')
+const operationButtons = document.querySelectorAll('.operation-buttons')
+const equalsButton = document.querySelector('.equals-button')
+const deleteButton = document.querySelector('.delete-button')
+const allClearButton = document.querySelector('.all-clear-button')
+const previousOperand = document.querySelector('.previous-operand')
+const currentOperand = document.querySelector('.current-operand')

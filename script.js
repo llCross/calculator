@@ -1,11 +1,12 @@
 //reference html buttons to javascript
-const numberButtons = document.querySelectorAll('[data-number]');
-const operationButtons = document.querySelectorAll('[data-operations]');
-const equalsButton = document.querySelector('[data-equals]');
-const deleteButton = document.querySelector('[data-delete');
-const allClearButton = document.querySelector('[data-all-clear');
-const previousOperandText = document.querySelector('.previous-operand');
-const currentOperandText = document.querySelector('.current-operand');
+const numberButtons = document.querySelectorAll('.calcu-buttons');
+const operationButtons = document.querySelectorAll('.operation-buttons');
+const equalsButton = document.querySelector('.equals-button');
+const deleteButton = document.querySelector('.delete-button');
+const allClearButton = document.querySelector('.all-clear-button');
+const previousOperand = document.querySelector('.previous-operand');
+const currentOperand = document.querySelector('.current-operand');
+
 
 //create a append number function
 //create a function to update the display
@@ -15,14 +16,9 @@ const currentOperandText = document.querySelector('.current-operand');
 //create a function to delete
 //create a function to clear
 
-function appendNumber(number) {
-
+function updateDisplay(number) {
+    currentOperand.innerText += number
 }
-
-function updateDisplay() {
-
-}
-
 function selectOperation(operation) {
 
 }
@@ -45,12 +41,6 @@ function clear() {
 
 numberButtons.forEach(button => {
     button.addEventListener('click', () => {
-        console.log('button clicked');
+        updateDisplay(button.innerText);
     });
 });
-
-equalsButton.addEventListener('click', log)
-
-function log() {
-    console.log('clicked');
-};

@@ -7,6 +7,8 @@ const allClearButton = document.querySelector('.all-clear-button');
 const previousOperand = document.querySelector('.previous-operand');
 const currentOperand = document.querySelector('.current-operand');
 
+let equals
+let operator
 
 //create a append number function
 //create a function to update the display
@@ -17,21 +19,10 @@ const currentOperand = document.querySelector('.current-operand');
 //create a function to clear
 
 function updateDisplay(number) {
+    if (number === '.' && currentOperand.innerText.includes('.')) return;
      currentOperand.innerText += number
 }
 
-
-function selectOperation(operation) {
-
-}
-
-function compute() {
-
-}
-
-function operate() {
-
-}
 
 function deleteNumber() {
     currentOperand.innerText = currentOperand.innerText.slice(0, -1);
@@ -42,6 +33,43 @@ function clear() {
     previousOperand.innerText = ''
 }
 
+function selectOperation() {
+
+}
+
+function operate(operation) {
+    operator = operation
+    previousOperand.innerText = currentOperand.innerText;
+    currentOperand.innerText = ''
+    if (currentOperand.innerText === '') return;
+    if (previousOperand.innerText !== '') {
+        compute();
+    }
+}
+
+function compute() {
+
+    switch (operator) {
+        case '+' :
+            equals = Number(previousOperand.innerText) + Number(currentOperand.innerText)
+            break;
+        case '-':
+            equals = Number(previousOperand.innerText) - Number(currentOperand.innerText)
+            break;
+        case '*':
+            equals = Number(previousOperand.innerText) * Number(currentOperand.innerText)
+            break;
+        case '/':
+            equals = Number(previousOperand.innerText) / Number(currentOperand.innerText)
+            break;
+        default:
+            return;
+    }
+    currentOperand.innerText = equals;
+}
+
+
+//Click Event listener
 numberButtons.forEach(button => {
     button.addEventListener('click', () => {
         updateDisplay(button.innerText);
@@ -53,6 +81,15 @@ allClearButton.addEventListener('click',() => {
 });
 
 deleteButton.addEventListener('click',() => {
-    console.log('clicked');
     deleteNumber();
+});
+
+equalsButton.addEventListener('click',() => {
+    compute();
+});
+
+operationButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        operate(button.innerText);
+    });
 });

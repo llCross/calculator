@@ -1,5 +1,5 @@
 //reference html buttons to javascript
-const numberButtons = document.querySelectorAll('.calcu-buttons');
+const numberButtons = document.querySelectorAll('.number-buttons');
 const operationButtons = document.querySelectorAll('.operation-buttons');
 const equalsButton = document.querySelector('.equals-button');
 const deleteButton = document.querySelector('.delete-button');
@@ -17,8 +17,10 @@ const currentOperand = document.querySelector('.current-operand');
 //create a function to clear
 
 function updateDisplay(number) {
-    currentOperand.innerText += number
+     currentOperand.innerText += number
 }
+
+
 function selectOperation(operation) {
 
 }
@@ -32,15 +34,25 @@ function operate() {
 }
 
 function deleteNumber() {
-
+    currentOperand.innerText = currentOperand.innerText.slice(0, -1);
 }
 
 function clear() {
-
+    currentOperand.innerText = ''
+    previousOperand.innerText = ''
 }
 
 numberButtons.forEach(button => {
     button.addEventListener('click', () => {
         updateDisplay(button.innerText);
     });
+});
+
+allClearButton.addEventListener('click',() => {
+    clear();
+});
+
+deleteButton.addEventListener('click',() => {
+    console.log('clicked');
+    deleteNumber();
 });

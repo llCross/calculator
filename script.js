@@ -90,6 +90,5 @@ equalsButton.addEventListener('click',() => {
 operationButtons.forEach(button => {
     button.addEventListener('click', () => {
         operate(button.innerText);
-        updateDisplay(button.innerText);
     });
 });

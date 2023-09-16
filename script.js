@@ -10,7 +10,6 @@ const currentOperand = document.querySelector('.current-operand');
 let equals
 let operator
 
-//create a append number function
 //create a function to update the display
 //create a function to select operation
 //create a function to compute
@@ -23,7 +22,6 @@ function updateDisplay(number) {
      currentOperand.innerText += number
 }
 
-
 function deleteNumber() {
     currentOperand.innerText = currentOperand.innerText.slice(0, -1);
 }
@@ -33,19 +31,18 @@ function clear() {
     previousOperand.innerText = ''
 }
 
-function selectOperation() {
-
-}
 
 function operate(operation) {
-    operator = operation
-    previousOperand.innerText = currentOperand.innerText;
-    currentOperand.innerText = ''
     if (currentOperand.innerText === '') return;
     if (previousOperand.innerText !== '') {
         compute();
+    } else {
+    previousOperand.innerText = currentOperand.innerText;
+    currentOperand.innerText = ''
     }
+    operator = operation
 }
+
 
 function compute() {
 
@@ -65,7 +62,9 @@ function compute() {
         default:
             return;
     }
-    currentOperand.innerText = equals;
+    previousOperand.innerText = equals;
+    currentOperand.innerText = '';
+    operator = undefined;
 }
 
 
@@ -91,5 +90,6 @@ equalsButton.addEventListener('click',() => {
 operationButtons.forEach(button => {
     button.addEventListener('click', () => {
         operate(button.innerText);
+        updateDisplay(button.innerText);
     });
 });

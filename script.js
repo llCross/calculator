@@ -46,6 +46,9 @@ function operate(operation) {
 
 function compute() {
 
+    if (operator === '/' && currentOperand.innerText === '0') {
+        alert ("Dividing by zero, eh? You must be a math daredevil")
+    }
     switch (operator) {
         case '+' :
             equals = Number(previousOperand.innerText) + Number(currentOperand.innerText)
@@ -66,7 +69,6 @@ function compute() {
     currentOperand.innerText = '';
     operator = undefined;
 }
-
 
 //Click Event listener
 numberButtons.forEach(button => {

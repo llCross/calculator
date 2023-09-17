@@ -94,3 +94,43 @@ operationButtons.forEach(button => {
         operate(button.innerText);
     });
 });
+
+
+//Dark mode Toggle
+
+const darkmodeToggle = document.querySelector("input[id=darkmode-toggle]");
+const casioText = document.querySelector('.casio-text');
+const screenSpace = document.querySelector('.screen-space');
+const calcuButtons = document.querySelectorAll('.calcu-buttons');
+
+darkmodeToggle.addEventListener('change', function() {
+  if (this.checked) {
+    document.body.style.backgroundColor = "black";
+    casioText.style.color = "white";
+    screenSpace.style.borderColor = "white";
+    currentOperand.style.color = "white";
+    previousOperand.style.color = "white";
+    //buttons
+    for (i = 0; i < calcuButtons.length; i++) { 
+        calcuButtons[i].style.backgroundColor = "black";
+        calcuButtons[i].style.borderColor = "white";
+        calcuButtons[i].style.color = "white";
+    }
+
+  } else {
+
+    document.body.style.backgroundColor = "white";
+    casioText.style.color = "black";
+    screenSpace.style.borderColor = "black";
+    currentOperand.innerText.color = "black";
+    currentOperand.style.color = "black";
+    previousOperand.style.color = "black";
+    //buttons
+    for (i = 0; i < calcuButtons.length; i++) { 
+        calcuButtons[i].style.backgroundColor = "white";
+        calcuButtons[i].style.borderColor = "black";
+        calcuButtons[i].style.color = "black";
+    }
+
+  }
+});

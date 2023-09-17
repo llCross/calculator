@@ -33,7 +33,6 @@ function clear() {
 
 
 function operate(operation) {
-    if (currentOperand.innerText === '') return;
     if (previousOperand.innerText !== '') {
         compute();
     } else {
@@ -45,6 +44,7 @@ function operate(operation) {
 
 
 function compute() {
+    if (currentOperand.innerText === '') return;
 
     if (operator === '/' && currentOperand.innerText === '0') {
         alert ("Dividing by zero, eh? You must be a math daredevil")
